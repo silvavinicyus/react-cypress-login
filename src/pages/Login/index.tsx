@@ -1,8 +1,7 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import './styles.css';
 import compalLogo from '../../assets/logo.svg';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast, {Toaster} from 'react-hot-toast';
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -32,25 +31,18 @@ const Login = () => {
 
   return (
     <div className="login-box">
+      <Toaster />
 
       <img src={compalLogo} alt="logo" />
 
       <form onSubmit={handleSubmit}>
 
-        <input type="text" placeholder="example@compal.com" onChange={handleEmail}/>
+        <input className="email" type="text" placeholder="example@compal.com" onChange={handleEmail}/>
         
-        <input type="password" placeholder="********" onChange={handlePassword}/>
+        <input className="password" type="password" placeholder="********" onChange={handlePassword}/>
 
         <button>Entrar</button>
       </form>
-      <ToastContainer position="bottom-left"
-        autoClose={3000}
-        hideProgressBar={true}
-        newestOnTop={false}
-        closeOnClick        
-        pauseOnFocusLoss={false}
-        draggable
-        pauseOnHover/>
     </div>
   )
 }

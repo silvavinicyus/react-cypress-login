@@ -3,10 +3,9 @@ import './styles.css';
 
 const Home = () => {
   return  (
-    <h1>
-      Hello World
-      aaaa
-    </h1>
+    <div className="home-box">
+      <p>Compal Home Page</p>
+    </div>
   )
 }
 
